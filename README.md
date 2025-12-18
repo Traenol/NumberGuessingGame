@@ -1,22 +1,15 @@
 # **Week 2: Project 1 — Number Guessing Game**
 A simple CLI guessing game to help with learning python
 
-## **Requirements**
+## **Project Requirements**
 
-* Random number
-* Guess loop
-* High/low feedback
-* Win message
+* Use Random package
+* Primary game loop to guess the correct number
+* Provide High and low feedback
+* Win message on successful guess
 
-### ✅ Rubric
+## **Secondary features**
 
-* ✅ Uses `random` module correctly
-* ✅ Loop terminates properly
-* ✅ Handles invalid input
-* ✅ Code is readable (meaningful variable names)
-
-**Mastery Check**
-
-* ✅ Difficulty levels
-* ✅ Guess counter
-* ✅ Replay option
+* Difficulty levels
+* Guess counter
+* Replay option
