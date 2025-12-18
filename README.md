@@ -10,13 +10,13 @@ A simple CLI guessing game to help with learning python
 
 ### ✅ Rubric
 
-* [ ] Uses `random` module correctly
-* [ ] Loop terminates properly
-* [ ] Handles invalid input
-* [ ] Code is readable (meaningful variable names)
+* [✅] Uses `random` module correctly
+* [✅] Loop terminates properly
+* [✅] Handles invalid input
+* [✅] Code is readable (meaningful variable names)
 
 **Mastery Check**
 
 * [ ] Difficulty levels
-* [ ] Guess counter
+* [✅] Guess counter
 * [ ] Replay option
