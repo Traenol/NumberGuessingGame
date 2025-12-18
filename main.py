@@ -1,4 +1,6 @@
 import random
+
+# Difficulties, can be extended(but need to update line 21)
 DIFFICULTY = {1: ["1: Easy(1-10)",1,10],
               2: ["2: Moderate(1-50)",1,50],
               3: ["3: Challenging(1-100)",1,100],
@@ -10,17 +12,25 @@ DIFFICULTY = {1: ["1: Easy(1-10)",1,10],
 
 def main():
     print("Welcome to the number guessing game.")
+
+    # Starting the main loop, will continue to loop until the player is done.
     playing = True
     while playing:
         diff = get_difficulty()
+        # Got the difficulty level from the player, extra handling for random. Update this if the difficulties list is modified.
         if diff == 8:
             diff = get_number_to_guess(DIFFICULTY[diff][1], DIFFICULTY[diff][2])
-        min = DIFFICULTY[diff][1]
-        max = DIFFICULTY[diff][2]
-        start_game(get_number_to_guess(min, max), min, max)
+        min_value = DIFFICULTY[diff][1]
+        max_value = DIFFICULTY[diff][2]
+
+        # Start a new game
+        print(f"I have thought of a number between {min_value} and {max_value}.")
+        start_game(get_number_to_guess(min_value, max_value))
+
+        # Play again loop
         print("Would you like to play again? Y/N")
         play_again = ""
-        while play_again != "n" or play_again != "y":
+        while play_again != "n" and play_again != "y":
             play_again = input()
             if play_again.lower() == "n":
                 playing = False
@@ -30,6 +40,8 @@ def main():
             else:
                 print("Please enter either Y/N only/")
     
+# Get the difficulty from the player
+# Returns int
 def get_difficulty():
     print("Please select a difficulty:")
     for diff in DIFFICULTY:
@@ -44,11 +56,13 @@ def get_difficulty():
             difficulty = int(difficulty)
     return difficulty
 
-def get_number_to_guess(min, max):
-    return random.randint(min, max)
+# Get a random number from supplied min/max
+# Returns int
+def get_number_to_guess(min_value, max_value):
+    return random.randint(min_value, max_value)
 
-def start_game(number_to_guess, min, max):
-    print(f"I have thought of a number between {min} and {max}.")
+# New game requested, loops until player finds the number.
+def start_game(number_to_guess):
     print("What number do you think it is?")
     current_guess = 0
     guess_counter = 0
@@ -68,4 +82,5 @@ def start_game(number_to_guess, min, max):
         else:
             print("Wrong, try again.")
 
+# Start the program
 main()
